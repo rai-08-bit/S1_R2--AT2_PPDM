@@ -2,14 +2,12 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
   TextInput,
   StatusBar,
   Pressable,
   Button,
   Alert,
-  ScrollView,
-  TextInputComponent,
+  TouchableOpacity
 } from 'react-native';
 
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
@@ -23,6 +21,13 @@ export default function App() {
   const [email, setEmail] = useState('');
   const [dataNascimento, setData] = useState('');
 
+  const realizarLogin = () => {
+    if (email === '' || nome === '' || telefone === '' || dataNascimento === '' ) {
+      Alert.alert("Atenção, por favor insira seus dados corretamente");
+    } else {
+      Alert.alert(`Cadastro realizado com sucesso. Bem-vindo(a) ${nome}!`)
+    }
+  }
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.conteudoPrincipal}>
@@ -62,6 +67,11 @@ export default function App() {
             onChangeText= {setData}
           />
         </View>
+        <TouchableOpacity
+          style={styles.botao}
+          onPress={realizarLogin}>
+          <Text style={styles.textoBotao}>Entrar</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -84,6 +94,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 15,
+    elevation: 15
   },
   conteudoSecundario: {
     backgroundColor: '#EFDECD',
