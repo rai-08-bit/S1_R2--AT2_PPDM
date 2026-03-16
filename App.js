@@ -4,13 +4,11 @@ import {
   View,
   TextInput,
   StatusBar,
-  Pressable,
-  Button,
   Alert,
   TouchableOpacity
 } from 'react-native';
 
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { useState } from 'react';
 
@@ -32,7 +30,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <View style={styles.conteudoPrincipal}>
         <StatusBar style="auto" />
-        <Text style={styles.texto}>Cadastro de usuário</Text>
+        <Text style={{fontSize: 20, fontWeight: 'bold'}}>CADASTRO DE USUÁRIO</Text>
         <View style={styles.conteudoSecundario}>
 
           <Text style={styles.texto}>Nome</Text>
@@ -85,8 +83,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#FF91A4',
   },
   texto: {
-    fontSize: 20,
-    textAlign: 'left'
+    fontSize: 17,
+    textAlign: 'center',
+    padding: 5
   },
   conteudoPrincipal: {
     backgroundColor: '#F4C2C2',
@@ -94,7 +93,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 15,
-    elevation: 15
+    elevation: 15,
+    padding: 20
   },
   conteudoSecundario: {
     backgroundColor: '#EFDECD',
@@ -102,15 +102,25 @@ const styles = StyleSheet.create({
     padding: 20,
     marginBottom: 50,
     width: '95%',
-    justifyContent: 'left',
-    alignItems: 'left',
+    justifyContent: 'center',
+    alignItems: 'center',
     borderRadius: 10,
+    elevation: 10
   },
   input: {
     backgroundColor: '#F4C2C2',
     width: '95%',
-    justifyContent: 'left',
-    alignItems: 'left',
+    justifyContent: 'center',
+    alignItems: 'center',
     borderRadius: 10,
+    elevation: 5
+  },
+  botao: {
+    backgroundColor: '#EFDECD',
+    padding: 15,
+    borderRadius: 15,
+    width: '95%',
+    alignItems: 'center',
+    elevation: 10
   }
 });
