@@ -5,7 +5,7 @@ import {
   TextInput,
   StatusBar,
   Alert,
-  TouchableOpacity
+  Pressable
 } from 'react-native';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -19,7 +19,7 @@ export default function App() {
   const [email, setEmail] = useState('');
   const [dataNascimento, setData] = useState('');
 
-  const realizarLogin = () => {
+  const realizarCadastro = () => {
     if (email === '' || nome === '' || telefone === '' || dataNascimento === '' ) {
       Alert.alert("Atenção, por favor insira seus dados corretamente");
     } else {
@@ -65,11 +65,11 @@ export default function App() {
             onChangeText= {setData}
           />
         </View>
-        <TouchableOpacity
+        <Pressable
           style={styles.botao}
-          onPress={realizarLogin}>
-          <Text style={styles.textoBotao}>Entrar</Text>
-        </TouchableOpacity>
+          onPress={realizarCadastro}>
+          <Text style={styles.textoBotao}>Salvar</Text>
+        </Pressable>
       </View>
     </SafeAreaView>
   );
