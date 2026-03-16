@@ -8,11 +8,11 @@ import {
   Pressable
 } from 'react-native';
 
-// import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={{backgroundColor: '#FF91A4', opacity: '50%'}}>
       <View style={styles.conteudoPrincipal}>
         <StatusBar style="auto" />
         <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
@@ -45,7 +45,7 @@ export default function App() {
           <Text>Salvar</Text>
         </Pressable>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
